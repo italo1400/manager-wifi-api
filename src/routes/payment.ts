@@ -1,5 +1,5 @@
 import { Router } from "express";
-import { PaymentController } from "../controller/payment.controller";
+import { PaymentController } from "../controller/paymentController";
 import { PaymentService } from "../useCase/payment/service/PaymentService";
 import { GeneratePaymentUseCase } from "../useCase/payment/GeneratePayment";
 

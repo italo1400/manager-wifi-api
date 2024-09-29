@@ -4,7 +4,10 @@ import {
   Column,
   CreateDateColumn,
   UpdateDateColumn,
+  ManyToOne,
+  JoinColumn,
 } from "typeorm";
+import { Provider } from "./Providers";
 
 @Entity("plans")
 export class Plan {
@@ -29,4 +32,8 @@ export class Plan {
     onUpdate: "CURRENT_TIMESTAMP",
   })
   updated_at: Date;
+
+  @ManyToOne(() => Provider, (provider) => provider.plans)
+  @JoinColumn({ name: "provider_id" })
+  provider: Provider;
 }

@@ -2,6 +2,7 @@ import express from "express";
 import cors from "cors";
 import paymentRoutes from "./routes/payment";
 import planRoutes from "./routes/plans";
+import providers from "./routes/provider";
 import { Server as SocketIOServer } from "socket.io";
 import http from "http";
 import { AppDataSource } from "./data-source";
@@ -13,6 +14,7 @@ app.use(cors());
 app.use(express.json());
 app.use("/payments", paymentRoutes);
 app.use("/plans", planRoutes);
+app.use("/providers", providers);
 
 const server = http.createServer(app);
 
